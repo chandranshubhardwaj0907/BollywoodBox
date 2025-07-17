@@ -1,103 +1,154 @@
-import Image from "next/image";
+import Link from "next/link";
+import { FaStar, FaComment } from "react-icons/fa";
 
-export default function Home() {
+export default function Dashboard() {
+  const movies = [
+    {
+      id: "1",
+      title: "3 Idiots",
+      comments: 152,
+      rating: 4.8,
+      description: "A story of three engineering students navigating life and friendship.",
+    },
+    {
+      id: "2",
+      title: "Dangal",
+      comments: 132,
+      rating: 4.7,
+      description: "A biographical sports drama based on the Phogat family.",
+    },
+    {
+      id: "3",
+      title: "Lagaan",
+      comments: 110,
+      rating: 4.6,
+      description: "Villagers challenge the British to a cricket match to avoid tax.",
+    },
+    {
+      id: "4",
+      title: "Bahubali",
+      comments: 245,
+      rating: 4.9,
+      description: "An epic tale of war, betrayal, and royalty in Mahishmati.",
+    },
+    {
+      id: "5",
+      title: "Swades",
+      comments: 90,
+      rating: 4.5,
+      description: "A NASA scientist returns to India to bring positive change.",
+    },
+    {
+      id: "6",
+      title: "Chak De! India",
+      comments: 105,
+      rating: 4.6,
+      description: "A disgraced coach trains the women's hockey team to victory.",
+    },
+    {
+      id: "7",
+      title: "PK",
+      comments: 140,
+      rating: 4.4,
+      description: "An alien on Earth explores human beliefs and misunderstandings.",
+    },
+    {
+      id: "8",
+      title: "Barfi!",
+      comments: 118,
+      rating: 4.3,
+      description: "A heartfelt story of love, silence, and acceptance.",
+    },
+    {
+      id: "9",
+      title: "Taare Zameen Par",
+      comments: 160,
+      rating: 4.9,
+      description: "A teacher helps a dyslexic child realize his true potential.",
+    },
+    {
+      id: "10",
+      title: "Zindagi Na Milegi Dobara",
+      comments: 123,
+      rating: 4.6,
+      description: "Three friends rediscover themselves during a trip across Spain.",
+    },
+    {
+      id: "11",
+      title: "Shershaah",
+      comments: 134,
+      rating: 4.7,
+      description: "Biopic of brave Indian soldier Captain Vikram Batra.",
+    },
+    {
+      id: "12",
+      title: "Kantara",
+      comments: 148,
+      rating: 4.8,
+      description: "A divine folklore tale rooted in local traditions.",
+    },
+  ];
+
+  const totalMovies = movies.length;
+  const totalComments = movies.reduce((sum, movie) => sum + movie.comments, 0);
+  const averageRating = (
+    movies.reduce((sum, movie) => sum + movie.rating, 0) / movies.length
+  ).toFixed(1);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="p-8 space-y-10 bg-gradient-to-br from-yellow-50 to-white min-h-screen">
+      {/* Dashboard Header */}
+      <div className="bg-white border border-yellow-200 p-6 rounded-xl shadow-md">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">
+          🎬 Indian Movie Dashboard
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-gray-800">
+          <div className="bg-yellow-100 p-5 rounded-lg flex flex-col items-center">
+            <p className="text-lg font-medium">Total Movies</p>
+            <p className="text-3xl font-bold">{totalMovies}</p>
+          </div>
+          <div className="bg-yellow-100 p-5 rounded-lg flex flex-col items-center">
+            <p className="text-lg font-medium">Total Comments</p>
+            <p className="text-3xl font-bold">{totalComments}</p>
+          </div>
+          <div className="bg-yellow-100 p-5 rounded-lg flex flex-col items-center">
+            <p className="text-lg font-medium">Avg Rating</p>
+            <p className="text-3xl font-bold">{averageRating} / 5</p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Movie List */}
+      <div>
+        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Movie List</h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {movies.map((movie) => (
+            <li
+              key={movie.id}
+              className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300"
+            >
+              <Link
+                href={`/movies/${movie.id}`}
+                className="text-xl font-semibold text-indigo-600 hover:underline"
+              >
+                {movie.title}
+              </Link>
+              <p className="text-gray-600 text-sm mt-2">{movie.description}</p>
+
+              <div className="flex justify-between items-center mt-4">
+                <div className="flex items-center text-sm text-gray-500">
+                  <FaComment className="mr-2" />
+                  <span>{movie.comments}</span>
+                </div>
+                <div className="flex items-center text-sm text-yellow-500">
+                  <FaStar className="mr-2" />
+                  <span>{movie.rating}</span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
