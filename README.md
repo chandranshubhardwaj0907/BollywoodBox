@@ -1,5 +1,5 @@
-BoolhywoodBox
-BoolhywoodBox is a stylish and responsive movie dashboard application showcasing a curated list of Indian films. Built using Next.js and Tailwind CSS, it displays movie ratings, comments, and individual movie details — all wrapped in a clean, interactive UI.
+BollywoodBox
+BollywoodBox is a stylish and responsive movie dashboard application showcasing a curated list of Indian films. Built using Next.js and Tailwind CSS, it displays movie ratings, comments, and individual movie details — all wrapped in a clean, interactive UI.
 
 📌 Features
 📊 Dashboard with movie stats (Total Movies, Total Comments, Avg Rating)
@@ -20,29 +20,6 @@ Styling: Tailwind CSS
 Icons: React Icons
 
 Language: TypeScript
-
-🚀 Getting Started
-1. Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/your-username/boolhywoodbox.git
-cdBollywoodBox
-2. Install Dependencies
-bash
-Copy
-Edit
-npm install
-# or
-yarn install
-3. Run the Development Server
-bash
-Copy
-Edit
-npm run dev
-# or
-yarn dev
-Visit: http://localhost:3000
 
 📁 Folder Structure
 bash
