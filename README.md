@@ -1,4 +1,4 @@
-BollywoodBox
+# BollywoodBox
 BollywoodBox is a stylish and responsive movie dashboard application showcasing a curated list of Indian films. Built using Next.js and Tailwind CSS, it displays movie ratings, comments, and individual movie details — all wrapped in a clean, interactive UI.
 
 📌 Features
