@@ -8,7 +8,7 @@ BollywoodBox is a stylish and responsive movie dashboard application showcasing 
 
 📝 Dedicated detail pages for each movie with individual comments
 
-💅 Clean UI built with Tailwind CSS in nextjs
+💅 Clean UI built with Tailwind CSS in nextjs.
 
 ⚡ Fast routing and rendering powered by Next.js.
 
