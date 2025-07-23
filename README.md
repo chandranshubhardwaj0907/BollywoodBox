@@ -18,6 +18,7 @@ Framework: Next.js
 Styling: Tailwind CSS
 
 Icons: React Icons
+npm i react-icons
 
 Language: TypeScript
 
