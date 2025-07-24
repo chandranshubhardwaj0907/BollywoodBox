@@ -35,7 +35,7 @@ Edit
 /public
 /styles
 🌱 Future Plans
-🔎 Movie search & filter functionality
+🔎 Movie search & filter functionality.
 
 🧑‍💬 Add review submission feature
 
